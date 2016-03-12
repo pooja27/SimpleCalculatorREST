@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<title>Calculator</title>
+  </head>
+  <body>
+  	<br/>
+	<br/>
+		<div class = "row top-buffer ">
+		<div class="col-md-4 col-md-offset-4">
+		<div class = "panel panel-default">	
+		<div class = "panel-heading">
+		<h1 class = "panel-title"> Simple Calculator </h1>
+		</div>
+		<form method = "post" action='arithmetic'>
+		<div class = "panel-body">
+			<div class = "form-group">
+				<label>First Number</label> 
+				<input  class = "form-control" type="text" id="field1" name="field1" tabindex="20" placeholder = "Enter Number" value=<%= firstNo %> /> 
+				<label>Second Number</label> 
+				<input  class = "form-control" type="text" id="field2" name="field2" tabindex="20" placeholder = "Enter Number" value=<%= secondNo %> />
+				<br/>
+			</div>
+
+			<div class = "form-group" align="center">			
+				<input class = "btn" id = "addition" value = "addition" type = "submit" name = "operation">
+				<input class = "btn" id = "subtraction" type = "submit"  name = "operation" value="subtraction">
+				<input class = "btn" id = "multiplication" type = "submit"  name = "operation" value="multiplication">
+				<input class = "btn" id = "division" type = "submit" name = "operation" value = "division" >
+			</div>
+				<p align = "center" class = "h2" id="solution1" style="height:50px; background-color:#E6F1FB;  padding-top: 10px;" >
+				<%= result %>
+				</p>			
+		</div>
+		</form>
+		</div>
+		</div>
+	</div>
+	<script>
+  		var result = <%- JSON.stringify(result) %>;
+	</script>
+	<script src="/js/scripts.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
